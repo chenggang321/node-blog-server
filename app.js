@@ -1,14 +1,11 @@
-// modules
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-// 日志插件
-const logger = require('morgan');
-const session = require('express-session');
-
-// import 等语法要用到 babel 支持
-require('babel-register');
+import createError from 'http-errors'
+import express from 'express'
+import path from 'path'
+import cookieParser from 'cookie-parser'
+import logger from 'morgan'
+import session from 'express-session'
+import route from './routes/index'
+import { connect } from './utils/mongodb'
 
 const app = express();
 
@@ -31,13 +28,9 @@ app.use(
 	}),
 );
 
-//const mongodb = require('./core/mongodb');
 
-// data server
-// mongodb.connect();
-
-//将路由文件引入
-const route = require('./routes/index');
+// 连接数据库
+connect();
 
 //初始化所有路由
 route(app);

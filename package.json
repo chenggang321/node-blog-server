@@ -9,6 +9,7 @@
   "dependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "body-parser": "^1.18.3",
     "consola": "^1.4.4",
     "cookie-parser": "~1.4.3",
     "crypto": "^1.0.1",

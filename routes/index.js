@@ -1,7 +1,6 @@
-const helloWorld = (req,res) => {
-    res.json('hello world!');
-}
+import {register} from './user'
 
-module.exports = app => {
-    app.get('/',helloWorld);
+export default (app)=>{
+    // user
+    app.post('/register',register)
 }
