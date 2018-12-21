@@ -1,7 +1,8 @@
 import {mongoose} from '../utils/mongodb'
-// import autoIncrement from 'mongoose-auto-increment'
+import autoIncrement from 'mongoose-auto-increment'
 
-const userSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+const userSchema = new Schema({
     // 账户
     username: {
         type: String,
@@ -34,11 +35,12 @@ const userSchema = new mongoose.Schema({
 })
 
 // 自增ID插件配置
-// userSchema.plugin(autoIncrement.plugin,{
-//     model:'User',
-//     field:'id',
-//     startAt:1,
-//     incrementBy: 1
-// })
+autoIncrement.initialize(mongoose.connection)
+userSchema.plugin(autoIncrement.plugin,{
+    model:'User',
+    field:'id',
+    startAt:1,
+    incrementBy: 1
+})
 
 export default mongoose.model('User',userSchema);

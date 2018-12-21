@@ -28,8 +28,6 @@ exports.connect = () => {
     mongoose.connection.once('open', () => {
         consola.ready('数据库连接成功!')
     })
-    // 自增 ID 初始化
-    autoIncrement.initialize(mongoose.connection)
     // 返回实例
     return mongoose
 }
