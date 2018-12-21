@@ -1,6 +1,5 @@
 import consola from 'consola'
 import mongoose from 'mongoose'
-import autoIncrement from 'mongoose-auto-increment'
 import {MONGODB} from '../config/app.config'
 
 // 去除弃用警告

@@ -7,6 +7,9 @@ const userSchema = new Schema({
     username: {
         type: String,
         require: true,
+        validate:(val)=>{
+            if(!val) return false
+        },
         default: ''
     },
     // 密码
@@ -17,7 +20,8 @@ const userSchema = new Schema({
     },
     // 邮箱
     email:{
-        type:String
+        type:String,
+        required: true
     },
     // 用户类型： 0 管理员 1 普通用户
     type:{

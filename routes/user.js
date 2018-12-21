@@ -22,7 +22,12 @@ export function register(req, res) {
                     responseJson(res,CODE.OK,'注册成功',data)
                 })
                 .catch(err=>{
-                    console.log(err)
+                    if(err.name === 'ValidationError'){
+                        let errorKey = Object.keys(err.errors)[0]
+                        let message = err.errors[errorKey].message;
+                        const NOTNULL = 'Validator failed for path `'+errorKey+'` with value ``';
+                        return responseJson(res,CODE.ERR,errorKey+'不能为空！')
+                    }
                     return responseJson(res)
                 })
         })
