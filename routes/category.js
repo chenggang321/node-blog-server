@@ -41,7 +41,7 @@ export function getCategoryList(req, res){
     })
 }
 
-// 删除分类
+// 添加分类
 export function addCategory(req, res){
     let { name, desc } = req.body
     Category.findOne({
