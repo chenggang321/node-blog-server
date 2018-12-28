@@ -38,6 +38,9 @@ const articleSchema = new Schema({
     // 文章分类
     category: [{type: Schema.Types.ObjectId, ref: 'Category', required: true}],
 
+    // 文章内容
+    content: {type: String, default: ''},
+
     // 点赞的用户
     like_users: [
         {

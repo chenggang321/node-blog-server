@@ -105,10 +105,7 @@ export function getUserList(req, res){
             let fields = {
                 _id: 1,
                 email: 1,
-                name: 1,
-                avatar: 1,
-                phone: 1,
-                introduce: 1,
+                username: 1,
                 type: 1,
                 create_time: 1
             }
