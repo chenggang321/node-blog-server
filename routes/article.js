@@ -122,7 +122,6 @@ export function getArticleList(req, res) {
                 title: 1,
                 author: 1,
                 keyword: 1,
-                content: 1,
                 desc: 1,
                 img_url: 1,
                 tags: 1,

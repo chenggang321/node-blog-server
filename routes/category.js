@@ -22,7 +22,7 @@ export function getCategoryList(req, res){
             console.error('Error:' + err)
         } else {
             responseData.count = count
-            let fields = { name: 1, desc: 1, create_time: 1, update_time: 1 } // 待返回的字段
+            let fields = { name: 1, desc: 1, create_time: 1, update_time: 1,_id:1 } // 待返回的字段
             let options = {
                 skip: skip,
                 limit: pageSize,
