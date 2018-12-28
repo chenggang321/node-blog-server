@@ -134,6 +134,7 @@ export function getArticleList(req, res) {
                 meta: 1,
                 create_time: 1,
                 update_time: 1,
+                _id:1
             };
             let options = {
                 skip: skip,
