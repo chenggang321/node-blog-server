@@ -175,6 +175,7 @@ export function getArticleList(req, res) {
                     } else {
                         responseData.list = result
                     }
+                    responseData.currentPage = pageNum
                     responseJson(res, CODE.OK, '操作成功！', responseData)
                 }
             })
