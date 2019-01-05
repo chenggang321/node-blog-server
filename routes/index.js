@@ -83,7 +83,7 @@ export default (app) => {
     app.post('/addThirdComment', addThirdComment)
     app.post('/changeComment', changeComment)
     app.post('/changeThirdComment', changeThirdComment)
-    app.get('/changeCommentList', getCommentList)
+    app.get('/getCommentList', getCommentList)
 
     // article
     app.post('/addArticle', addArticle)
