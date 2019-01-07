@@ -10,7 +10,9 @@ import {
 import {
     addCategory,
     delCategory,
-    getCategoryList
+    getCategoryDetail,
+    getCategoryList,
+    updateCategory
 } from './category'
 
 import {
@@ -72,6 +74,8 @@ export default (app) => {
     app.post('/addCategory', addCategory)
     app.post('/delCategory', delCategory)
     app.get('/getCategoryList', getCategoryList)
+    app.post('/updateCategory', updateCategory)
+    app.post('/getCategoryDetail', getCategoryDetail)
 
     // tag
     app.post('/addTag', addTag)

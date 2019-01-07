@@ -1,6 +1,7 @@
 import {responseJson} from '../utils/utils'
 import Category from '../models/category'
 import {CODE} from "../config/app.config";
+import Article from "../models/article";
 
 // 获取全部分类
 export function getCategoryList(req, res){
@@ -40,6 +41,19 @@ export function getCategoryList(req, res){
         }
     })
 }
+// 获取分类详情
+export function getCategoryDetail(req,res){
+    let {id} = req.body
+    Category.findOne({_id: id}, (Error, data) => {
+        if (Error) {
+            console.error('Error:' + Error)
+            // throw error;
+        }
+        console.log(data)
+    }).then(data=>{
+        responseJson(res,CODE.OK,'操作成功',data)
+    })
+}
 
 // 添加分类
 export function addCategory(req, res){
@@ -70,6 +84,23 @@ export function addCategory(req, res){
         })
 }
 
+// 修改分类
+export function updateCategory(req,res){
+    const {name, desc, id} = req.body;
+    Category.updateOne(
+        {_id: id},
+        {
+            name,
+            desc
+        }
+    ).then(result => {
+        responseJson(res, CODE.OK, '操作成功', result)
+    }).catch(err => {
+        console.error(err)
+        responseJson(res)
+    });
+}
+
 // 删除分类
 export function delCategory(req, res){
     let { id } = req.body;
@@ -85,4 +116,4 @@ export function delCategory(req, res){
             console.error('err :', err);
             responseJson(res);
         });
-};
+}
