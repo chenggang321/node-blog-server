@@ -95,6 +95,7 @@ export function getUserList(req, res){
     let responseData = {
         count: 0,
         list: [],
+        pageNum
     };
     User.countDocuments(conditions, (err, count) => {
         if (err) {

@@ -17,6 +17,7 @@ export function getCategoryList(req, res){
     let responseData = {
         count: 0,
         list: [],
+        pageNum
     };
     Category.countDocuments(conditions, (err, count) => {
         if (err) {
