@@ -61,59 +61,61 @@ import {
     updateTimeAxis
 } from "./timeAxis"
 
+const api = '/api'
+
 export default (app) => {
     // user
-    app.post('/register', register)
-    app.post('/login', login)
-    app.post('/userInfo', userInfo)
-    app.post('/logout', logout)
-    app.post('/delUserById', delUserById)
-    app.get('/getUserList', getUserList)
+    app.post(api+'/register', register)
+    app.post(api+'/login', login)
+    app.post(api+'/userInfo', userInfo)
+    app.post(api+'/logout', logout)
+    app.post(api+'/delUserById', delUserById)
+    app.get(api+'/getUserList', getUserList)
 
     // category
-    app.post('/addCategory', addCategory)
-    app.post('/delCategory', delCategory)
-    app.get('/getCategoryList', getCategoryList)
-    app.post('/updateCategory', updateCategory)
-    app.post('/getCategoryDetail', getCategoryDetail)
+    app.post(api+'/addCategory', addCategory)
+    app.post(api+'/delCategory', delCategory)
+    app.get(api+'/getCategoryList', getCategoryList)
+    app.post(api+'/updateCategory', updateCategory)
+    app.post(api+'/getCategoryDetail', getCategoryDetail)
 
     // tag
-    app.post('/addTag', addTag)
-    app.post('/delTag', delTag)
-    app.get('/getTagList', getTagList)
+    app.post(api+'/addTag', addTag)
+    app.post(api+'/delTag', delTag)
+    app.get(api+'/getTagList', getTagList)
 
     // comment
-    app.post('/addComment', addComment)
-    app.post('/addThirdComment', addThirdComment)
-    app.post('/changeComment', changeComment)
-    app.post('/changeThirdComment', changeThirdComment)
-    app.get('/getCommentList', getCommentList)
+    app.post(api+'/addComment', addComment)
+    app.post(api+'/addThirdComment', addThirdComment)
+    app.post(api+'/changeComment', changeComment)
+    app.post(api+'/changeThirdComment', changeThirdComment)
+    app.get(api+'/getCommentList', getCommentList)
 
     // article
-    app.post('/addArticle', addArticle)
-    app.post('/updateArticle', updateArticle)
-    app.post('/delArticle', delArticle)
-    app.get('/getArticleList', getArticleList)
-    app.post('/getArticleDetail', getArticleDetail)
-    app.post('/likeArticle', likeAricle)
+    app.post(api+'/addArticle', addArticle)
+    app.post(api+'/updateArticle', updateArticle)
+    app.post(api+'/delArticle', delArticle)
+    app.get(api+'/getArticleList', getArticleList)
+    app.post(api+'/getArticleDetail', getArticleDetail)
+    app.post(api+'/likeArticle', likeAricle)
 
     // link
-    app.post('/addLink', addLink)
-    app.post('/updateLink', updateLink)
-    app.post('/delLink', delLink)
-    app.get('/getLinkList', getLinkList)
+    app.post(api+'/addLink', addLink)
+    app.post(api+'/updateLink', updateLink)
+    app.post(api+'/delLink', delLink)
+    app.get(api+'/getLinkList', getLinkList)
 
     // message
-    app.post('/addMessage', addMessage)
-    app.post('/addReplyMessage', addReplyMessage)
-    app.post('/delMessage', delMessage)
-    app.post('/getMessageDetail', getMessageDetail)
-    app.get('/getMessageList', getMessageList)
+    app.post(api+'/addMessage', addMessage)
+    app.post(api+'/addReplyMessage', addReplyMessage)
+    app.post(api+'/delMessage', delMessage)
+    app.post(api+'/getMessageDetail', getMessageDetail)
+    app.get(api+'/getMessageList', getMessageList)
 
     // timeAxis
-    app.post('/addTimeAxis', addTimeAxis)
-    app.post('/updateTimeAxis', updateTimeAxis)
-    app.post('/delTimeAxis', delTimeAxis)
-    app.get('/getTimeAxisList', getTimeAxisList)
-    app.post('/getTimeAxisDetail', getTimeAxisDetail)
+    app.post(api+'/addTimeAxis', addTimeAxis)
+    app.post(api+'/updateTimeAxis', updateTimeAxis)
+    app.post(api+'/delTimeAxis', delTimeAxis)
+    app.get(api+'/getTimeAxisList', getTimeAxisList)
+    app.post(api+'/getTimeAxisDetail', getTimeAxisDetail)
 }
