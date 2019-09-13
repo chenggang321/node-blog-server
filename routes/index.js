@@ -60,10 +60,13 @@ import {
     getTimeAxisList,
     updateTimeAxis
 } from "./timeAxis"
+import {helloWord} from "./helloword"
 
 const api = '/api'
 
 export default (app) => {
+    // hello world
+    app.get(api+'/helloworld',helloWord)
     // user
     app.post(api+'/register', register)
     app.post(api+'/login', login)
