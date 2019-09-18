@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
         name: 'node-blog-server',
-        script: 'app.js',
+        script: './bin/www',
 
         // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
         args: 'one two',
