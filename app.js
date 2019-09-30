@@ -37,6 +37,12 @@ app.use(
 // 连接数据库
 connect();
 
+// 304
+app.get('/*', function(req, res, next){
+    res.setHeader('Last-Modified', (new Date()).toUTCString());
+    next();
+});
+
 //初始化所有路由
 route(app);
 
