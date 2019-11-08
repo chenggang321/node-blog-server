@@ -9,7 +9,7 @@ export function addArticle(req, res) {
     const tempArticle = new Article({
         title,
         author,
-        keyword: keyword ? keyword.split(',') : [],
+        keyword: keyword,
         content,
         numbers: content.length,
         desc,
