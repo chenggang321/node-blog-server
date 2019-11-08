@@ -3,7 +3,7 @@ import argv from 'yargs'
 
 export const APP = {
     host:'localhost',
-    port:'8084',
+    port:'80',
 }
 
 export const MONGODB = {
