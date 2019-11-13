@@ -7,6 +7,7 @@ import session from 'express-session'
 import route from './routes/index'
 import { connect } from './utils/mongodb'
 import bodyParser from 'body-parser'
+import Chat from './models/chat'
 
 const app = express();
 
@@ -61,5 +62,23 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
+
+const server = require('http').createServer();
+const io = require('socket.io')(server);
+io.on('connection', client => {
+    client.on('sendMsg',function(data){
+    	console.log(data)
+        /*const {from,to,msg} = data
+        const id = [from,to].sort().join('_')
+        Chat.create({id,from,to,content:msg},function(err,doc){
+            console.log(doc)
+            io.emit('recvmsg',Object.assign({},doc._doc))
+        })*/
+        io.emit('recvmsg',data)
+    })
+
+});
+
+server.listen(9001);
 
 module.exports = app;
