@@ -5,7 +5,11 @@ import {CODE} from "../config/app.config"
 
 // 添加文章
 export function addArticle(req, res) {
-    const {title, author, keyword, content, desc, img_url, tags, category, state, type, origin} = req.body;
+    if(!req.session.userInfo) {
+        return responseJson(res,CODE.ERR,'您还没登录')
+    }
+    const {title, keyword, content, desc, img_url, tags, category, state, type, origin} = req.body;
+    const author = req.session.userInfo.username;
     const tempArticle = new Article({
         title,
         author,
