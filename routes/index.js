@@ -61,6 +61,7 @@ import {
     updateTimeAxis
 } from "./timeAxis"
 import {helloWord} from "./helloword"
+import bodyParser from 'body-parser'
 
 const api = '/api'
 
@@ -95,8 +96,8 @@ export default (app) => {
     app.get(api+'/getCommentList', getCommentList)
 
     // article
-    app.post(api+'/addArticle', addArticle)
-    app.post(api+'/updateArticle', updateArticle)
+    app.post(api+'/addArticle',bodyParser.json({limit: '10mb'}), addArticle)
+    app.post(api+'/updateArticle',bodyParser.json({limit: '10mb'}), updateArticle)
     app.post(api+'/delArticle', delArticle)
     app.get(api+'/getArticleList', getArticleList)
     app.post(api+'/getArticleDetail', getArticleDetail)
