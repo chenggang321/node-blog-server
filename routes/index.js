@@ -62,6 +62,10 @@ import {
 } from "./timeAxis"
 import {helloWord} from "./helloword"
 import bodyParser from 'body-parser'
+import multer from 'multer'
+import {uploads,loadImg} from './uploads'
+const upload =  multer({ dest: 'uploads/'}) // 文件储存路径
+
 
 const api = '/api'
 
@@ -122,4 +126,8 @@ export default (app) => {
     app.post(api+'/delTimeAxis', delTimeAxis)
     app.get(api+'/getTimeAxisList', getTimeAxisList)
     app.post(api+'/getTimeAxisDetail', getTimeAxisDetail)
+
+    // uploads
+    app.post(api+'/uploads',upload.single('avatar'),uploads)
+    app.get(api+'/loadImg',loadImg)
 }
